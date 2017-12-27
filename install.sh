@@ -55,9 +55,9 @@ fi
 
 #Install SSR and SSR-Bash
 cd /usr/local/
-git clone https://github.com/FunctionClub/SSR-Bash-Python
-cp SSR-Bash-Python/shadowsocksr.zip /usr/local/shadowsocksr.zip
-chmod -R 777 /usr/local/SSR-Bash-Python/
+git clone https://github.com/asaboss/little-paper
+cp little-paper/shadowsocksr.zip /usr/local/shadowsocksr.zip
+chmod -R 777 /usr/local/little-paper/
 cd /usr/local/shadowsocksr
 unzip shadowsocksr.zip
 cd /usr/local/shadowsocksr
@@ -65,7 +65,7 @@ chmod -R 777 *
 bash initcfg.sh
 
 #Install Libsodium
-cd /usr/local/SSR-Bash-Python/
+cd /usr/local/little-paper/
 export LIBSODIUM_VER=1.0.11
 tar xvf libsodium-$LIBSODIUM_VER.tar.gz
 pushd libsodium-$LIBSODIUM_VER
@@ -73,14 +73,14 @@ pushd libsodium-$LIBSODIUM_VER
 make install
 popd
 ldconfig
-cd /usr/local/SSR-Bash-Python/ && rm -rf libsodium-$LIBSODIUM_VER.tar.gz libsodium-$LIBSODIUM_VER
+cd /usr/local/little-paper/ && rm -rf libsodium-$LIBSODIUM_VER.tar.gz libsodium-$LIBSODIUM_VER
 
 #Start when boot
 if [[ ${OS} == Ubuntu || ${OS} == Debian ]];then
-    cat >/etc/init.d/ssr-bash-python <<EOF
+    cat >/etc/init.d/little-paper <<EOF
 #!/bin/sh
 ### BEGIN INIT INFO
-# Provides:          SSR-Bash_python
+# Provides:          little-paper
 # Required-Start: $local_fs $remote_fs
 # Required-Stop: $local_fs $remote_fs
 # Should-Start: $network
@@ -93,19 +93,19 @@ if [[ ${OS} == Ubuntu || ${OS} == Debian ]];then
 iptables-restore < /etc/iptables.up.rules
 bash /usr/local/shadowsocksr/logrun.sh
 EOF
-    chmod 755 /etc/init.d/ssr-bash-python
-    chmod +x /etc/init.d/ssr-bash-python
+    chmod 755 /etc/init.d/little-paper
+    chmod +x /etc/init.d/little-paper
     cd /etc/init.d
-    update-rc.d ssr-bash-python defaults 95
+    update-rc.d little-paper defaults 95
 fi
 
 if [[ ${OS} == CentOS ]];then
     echo "
 iptables-restore < /etc/iptables.up.rules
 bash /usr/local/shadowsocksr/logrun.sh
-" > /etc/rc.d/init.d/ssr-bash-python
-    chmod +x  /etc/rc.d/init.d/ssr-bash-python
-    echo "/etc/rc.d/init.d/ssr-bash-python" >> /etc/rc.d/rc.local
+" > /etc/rc.d/init.d/little-paper
+    chmod +x  /etc/rc.d/init.d/little-paper
+    echo "/etc/rc.d/init.d/little-paper" >> /etc/rc.d/rc.local
     chmod +x /etc/rc.d/rc.local
 fi
 
@@ -138,7 +138,7 @@ systemctl enable iptables.service
 fi
 
 #Install SSR-Bash Background
-cp /usr/local/SSR-Bash-Python/ssr /usr/local/bin/ssr
+cp /usr/local/little-paper/ssr /usr/local/bin/ssr
 chmod +x /usr/local/bin/ssr
 
 #Modify ShadowsocksR API
@@ -146,7 +146,7 @@ sed -i "s/sspanelv2/mudbjson/g" /usr/local/shadowsocksr/userapiconfig.py
 sed -i "s/UPDATE_TIME = 60/UPDATE_TIME = 10/g" /usr/local/shadowsocksr/userapiconfig.py
 sed -i "s/SERVER_PUB_ADDR = '127.0.0.1'/SERVER_PUB_ADDR = '$(wget -qO- -t1 -T2 ipinfo.io/ip)'/" /usr/local/shadowsocksr/userapiconfig.py
 #INstall Success
-bash /usr/local/SSR-Bash-Python/self-check.sh
+bash /usr/local/little-paper/self-check.sh
 echo '安装完成！输入 ssr 即可使用本程序~'
 echo 'Telegram Group: https://t.me/functionclub'
 echo 'Google Puls: https://plus.google.com/communities/113154644036958487268'
