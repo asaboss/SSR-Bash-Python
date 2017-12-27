@@ -28,6 +28,8 @@
 - 无法删除最后一名用户（官方限制）
 
 ## 安装 ##
+    wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+    
     wget -N --no-check-certificate https://raw.githubusercontent.com/asaboss/little-paper/master/install.sh && bash install.sh
 
 ## 卸载 ##
