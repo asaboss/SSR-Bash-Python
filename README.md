@@ -28,13 +28,13 @@
 - 无法删除最后一名用户（官方限制）
 
 ## 安装 ##
-    wget -N --no-check-certificate https://raw.githubusercontent.com/asaboss/little-paper/master/install.sh && bash install.sh
+    wget -N --no-check-certificate https://raw.githubusercontent.com/asaboss/SSR-Bash-Python/master/install.sh && bash install.sh
 
 ## 卸载 ##
-    wget -N --no-check-certificate https://raw.githubusercontent.com/asaboss/little-paper/master/uninstall.sh && bash uninstall.sh
+    wget -N --no-check-certificate https://raw.githubusercontent.com/asaboss/SSR-Bash-Python/master/uninstall.sh && bash uninstall.sh
 
 ## 自检 ##
-    wget -N --no-check-certificate https://raw.githubusercontent.com/asaboss/little-paper/master/self-check.sh && bash self-check.sh
+    wget -N --no-check-certificate https://raw.githubusercontent.com/asaboss/SSR-Bash-Python/master/self-check.sh && bash self-check.sh
 
 ## 截图 ##
 ![1.png](1.png)
