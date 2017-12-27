@@ -49,7 +49,7 @@ case $devc in
 1)
 	checkupdate
 	#rm -rf /usr/local/bin/ssr
-	#cd /usr/local/SSR-Bash-Python/
+	#cd /usr/local/little-paper/
 	#git pull
 	#wget -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/${GH_REPO}/master/ssr
 	#chmod +x /usr/local/bin/ssr
