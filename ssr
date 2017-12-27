@@ -4,7 +4,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 #Check Root
 [ $(id -u) != "0" ] && { echo "Error: You must be root to run this script"; exit 1; }
 
-echo "欢迎使用 SSR-Bash (Python Base) Author:Kirito 雨落无声"
+echo "欢迎使用 little-paper (Python Base) Author:Kirito 雨落无声"
 
 echo 'Function Club 无限期停更说明'
 echo 'https://www.ixh.me/2017/05/function-club-stop/'
@@ -14,7 +14,7 @@ echo 'Goodbye, user'
 
 echo '相逢有时，后会无期'
 echo '祝破瓦一切安好。'
-echo 'SSR-Bash-Python The Final Version'
+echo 'little-paper The Final Version'
 echo 'Local Install Mode, Never Update'
 echo ''
 echo ''
@@ -37,23 +37,23 @@ done
 case $choice in
 
 1)
-	bash /usr/local/SSR-Bash-Python/server.sh
+	bash /usr/local/little-paper/server.sh
 ;;
 	
 2)
-	bash /usr/local/SSR-Bash-Python/user.sh
+	bash /usr/local/little-paper/user.sh
 ;;
 
 3)
-	bash /usr/local/SSR-Bash-Python/traffic.sh
+	bash /usr/local/little-paper/traffic.sh
 ;;
 
 4)
-	bash /usr/local/SSR-Bash-Python/dev.sh
+	bash /usr/local/little-paper/dev.sh
 ;;
 
 5)
-	bash /usr/local/SSR-Bash-Python/self-check.sh
+	bash /usr/local/little-paper/self-check.sh
 ;;
 
 esac
